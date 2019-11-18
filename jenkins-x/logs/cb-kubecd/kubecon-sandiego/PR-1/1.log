@@ -1,0 +1,140 @@
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-fbj9w[0m
+{"level":"warn","ts":1574106504.4692023,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574106504.4700203,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-xs8vf[0m
+{"level":"warn","ts":1574106506.7030756,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1574106506.7061083,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source\""}
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-kubecon-sandiego-pr-1-djcwm[0m
+{"level":"warn","ts":1574106615.9460113,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1574106616.4450903,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/cb-kubecd/kubecon-sandiego.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:07c13b8a9ab3c91a11a3c19a622fd783b47ddd57,1:36fbbef71aa4e457cafca6cc0c12ef2f9e5c79c6
+DEBUG: ran git fetch --unshallow origin 36fbbef71aa4e457cafca6cc0c12ef2f9e5c79c6: 07c13b8a9ab3c91a11a3c19a622fd783b47ddd57: in 
+DEBUG: ran git checkout master in 
+DEBUG: ran git reset --hard 07c13b8a9ab3c91a11a3c19a622fd783b47ddd57 in 
+DEBUG: ran clean --force -d . in 
+DEBUG: ran git merge 36fbbef71aa4e457cafca6cc0c12ef2f9e5c79c6 in 
+Merged SHA 36fbbef71aa4e457cafca6cc0c12ef2f9e5c79c6 with commit message 'update welcome page' into base branch master
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.305s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E1118 19:50:19.805488       9 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E1118 19:50:19.809461       9 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2019/11/18 19:50:19 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2019/11/18 19:50:20 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Executing 0 build triggers                   
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Using files from context: [/workspace/source] 
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] ENV PORT 8080                                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] WORKDIR /usr/src/app                         
+[36mINFO[0m[0001] cmd: workdir                                 
+[36mINFO[0m[0001] Changed working directory to /usr/src/app    
+[36mINFO[0m[0001] Creating directory /usr/src/app              
+[36mINFO[0m[0001] Taking snapshot of files...                  
+[36mINFO[0m[0001] Using files from context: [/workspace/source] 
+[36mINFO[0m[0001] COPY . .                                     
+[36mINFO[0m[0001] Taking snapshot of files...                  
+[36mINFO[0m[0001] CMD ["npm", "start"]                         
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+2019/11/18 19:50:21 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2019/11/18 19:50:21 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2019/11/18 19:50:21 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2019/11/18 19:50:21 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2019/11/18 19:50:21 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2019/11/18 19:50:23 pushed blob: sha256:0640ead83eb253e33780811030cdb7b3224bc8dc5bb597ec02dd0b21e9b39f0c
+2019/11/18 19:50:23 pushed blob: sha256:f581efdee6ad7cee11113f6f71a873ea6d018877ca111a2dfd922cf1495bf548
+2019/11/18 19:50:24 pushed blob: sha256:3dfce44f71d5c9c37e5ccc26271589dd2739adff9d4d002b308e5550c45712a5
+2019/11/18 19:50:24 gcr.io/jenkins-x-demo-238815/kubecon-sandiego:0.0.0-SNAPSHOT-PR-1-1: digest: sha256:0b33db819d2e9e9acae9c2a31c889a85746f0f23e4fa75b38f760fed5bcaeb39 size: 1404
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-1-1/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: gcr.io\/jenkins-x-demo-238815\/kubecon-sandiego|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-1-1/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-1-1" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Read credentials for http://chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mcb-kubecd-kubecon-sandiego-pr-1-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: rawlingsj with email address: rawlingsj80@gmail.com
+Created environment cb-kubecd-kubecon-sandiego-pr-1
+Namespace **-cb-kubecd-kubecon-sandiego-pr-1 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: rawlings-demo.com
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: gcr.io/jenkins-x-demo-238815/kubecon-sandiego
+    tag: 0.0.0-SNAPSHOT-PR-1-1
+
+
+Updating PipelineActivities cb-kubecd-kubecon-sandiego-pr-1-1 which has status Running
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 1.365335013s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 1.561649783s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 3.323062955s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 3.991455522s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 6.357606507s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 7.861671857s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 5.701165179s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 23.544622783s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 26.633818378s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 34.299787369s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 36.352839064s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 1m2.344471022s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 1m19.587247538s
+WARNING: preview application http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com not available, error was Get http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com: dial tcp: lookup kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com on 10.39.240.10:53: no such host, delaying for: 1m29.949569414s
+Preview application is now available at: http://kubecon-sandiego.**-cb-kubecd-kubecon-sandiego-pr-1.rawlings-demo.com
